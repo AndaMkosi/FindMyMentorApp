@@ -1,0 +1,73 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<MasterDetailPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+                  xmlns:pages="clr-namespace:Meento.Pages"
+                  mc:Ignorable="d"
+             x:Class="Meento.Pages.MasterPage">
+    <MasterDetailPage.Master>
+        <ContentPage Title="Master">
+
+            <StackLayout BackgroundColor="#808080"> 
+
+                <Grid>
+                    <BoxView BackgroundColor="Gold" HeightRequest="150"/>
+                    <Label Text="Welcome to Meento" FontAttributes="Bold" TextColor="White" FontSize="Large" Margin="15,75,0,0" />
+                </Grid>
+                
+                <StackLayout Orientation="Horizontal" Margin="20,20,0,0" Spacing="20">
+                    <Image Source="home.png" HeightRequest="50" WidthRequest="50"/>
+                    <Label Text="Home" FontSize="Medium" VerticalOptions="Center" TextColor="White"></Label>
+                    <StackLayout.GestureRecognizers>
+                        <TapGestureRecognizer x:Name="HomeTap" Tapped="HomeTap_Tapped"/>
+                    </StackLayout.GestureRecognizers>
+
+                </StackLayout>
+
+                <StackLayout Orientation="Horizontal" Margin="20,20,0,0" Spacing="20">
+                    <Image Source="password.png"  HeightRequest="50" WidthRequest="50" />
+                    <Label Text="Change Password" FontSize="Medium" VerticalOptions="Center" TextColor="White"></Label>
+                    <StackLayout.GestureRecognizers>
+                        <TapGestureRecognizer x:Name="PasswordTap" Tapped="PasswordTap_Tapped"/>
+                    </StackLayout.GestureRecognizers>
+                </StackLayout>
+
+                <StackLayout Orientation="Horizontal" Margin="20,20,0,0" Spacing="20">
+                    <Image Source="tutor.jpg"  HeightRequest="50" WidthRequest="50" />
+                    <Label Text="Become a Tutor" FontSize="Medium" VerticalOptions="Center" TextColor="White"></Label>
+                    <StackLayout.GestureRecognizers>
+                        <TapGestureRecognizer x:Name="TutorTap" Tapped="TutorTap_Tapped"/>
+                    </StackLayout.GestureRecognizers>
+                </StackLayout>
+
+                <StackLayout Orientation="Horizontal" Margin="20,20,0,0" Spacing="20">
+                    <Image Source="faqs.png"  HeightRequest="50" WidthRequest="50" />
+                    <Label Text="FAQ" FontSize="Medium" VerticalOptions="Center" TextColor="White"></Label>
+                    <StackLayout.GestureRecognizers>
+                        <TapGestureRecognizer x:Name="FaqsTap" Tapped="FaqsTap_Tapped"/>
+                    </StackLayout.GestureRecognizers>
+                </StackLayout>
+
+                <StackLayout Orientation="Horizontal" Margin="20,20,0,0" Spacing="20">
+                    <Image Source="logout.png"  HeightRequest="50" WidthRequest="50" />
+                    <Label Text="Logout" FontSize="Medium" VerticalOptions="Center" TextColor="White"></Label>
+                    <StackLayout.GestureRecognizers>
+                        <TapGestureRecognizer x:Name="LogoutTap" Tapped="LogoutTap_Tapped"/>
+                    </StackLayout.GestureRecognizers>
+                </StackLayout>
+
+            </StackLayout>
+            
+        </ContentPage>
+    </MasterDetailPage.Master>
+
+    <MasterDetailPage.Detail>
+        <NavigationPage>
+            <x:Arguments>
+                <pages:HomePage></pages:HomePage>
+            </x:Arguments>
+        </NavigationPage>
+    </MasterDetailPage.Detail>
+    
+</MasterDetailPage>
